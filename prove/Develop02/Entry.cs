@@ -15,7 +15,7 @@ public class Entry
     }
 
 
-    public void Display()
+    public void _display()
     {
         Console.WriteLine($"Date: {_date}");
         Console.WriteLine($"Prompt: {_prompt}");
@@ -23,13 +23,13 @@ public class Entry
         Console.WriteLine();
     }
 
-    public string HoldData()
+    public string _saveData()
     {
         return ($"{_date}|{_prompt}|{_entry}");
     }
 
 
-    public static Entry LoadData(string line)
+    public static Entry _loadData(string line)
     {
         string[] parts = line.Split('|');
         return new Entry(parts[0], parts[1], parts[2]);

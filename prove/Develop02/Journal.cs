@@ -21,7 +21,7 @@ public class Journal
     {
         foreach (Entry entry in _entries)
         {
-            entry.Display();
+            entry._display();
         }
     }
 
@@ -31,7 +31,7 @@ public class Journal
         {
             foreach (Entry entry in _entries)
             {
-                writer.WriteLine(entry.HoldData());
+                writer.WriteLine(entry._saveData());
             }
         }
     }
@@ -42,7 +42,7 @@ public class Journal
         string[] lines = File.ReadAllLines(filename);
         foreach (string line in lines)
         {
-            Entry entry = Entry.LoadData(line);
+            Entry entry = Entry._loadData(line);
             _entries.Add(entry);
         }
         Console.WriteLine("Journal loaded successfully.");

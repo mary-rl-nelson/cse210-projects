@@ -12,7 +12,7 @@ public class Journal
         _entries = new List<Entry>();
     }
 
-    public void AddEntry(Entry entry)
+    public void _addEntry(Entry entry)
     {
         _entries.Add(entry);
     }

@@ -11,10 +11,10 @@ class Program
         while (running)
         {
             Console.WriteLine("\nMenu:");
-            Console.WriteLine("1. Write a new entry");
-            Console.WriteLine("2. Display all entries");
-            Console.WriteLine("3. Save journal to file");
-            Console.WriteLine("4. Load journal from file");
+            Console.WriteLine("1. New Entry");
+            Console.WriteLine("2. Display");
+            Console.WriteLine("3. Save");
+            Console.WriteLine("4. Load");
             Console.WriteLine("5. Quit");
             Console.Write("Choose an option: ");
             string choice = Console.ReadLine();
@@ -23,11 +23,11 @@ class Program
             {
                 string date = DateTime.Now.ToShortDateString();
                 string prompt = promptGen.GeneratePrompt();
-                Console.WriteLine("\nPrompt: " + prompt);
+                Console.WriteLine($"\nPrompt: {prompt}");
                 Console.Write("Your response: ");
                 string response = Console.ReadLine();
                 Entry entry = new Entry(date, prompt, response);
-                journal.AddEntry(entry);
+                journal._addEntry(entry);
             }
             else if (choice == "2")
             {

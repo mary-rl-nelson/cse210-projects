@@ -1,3 +1,5 @@
+using System.IO; 
+
 public class Entry
 {
     public string _date;
@@ -5,12 +7,12 @@ public class Entry
     public string _entry;
 
 
-public Entry(string date, string prompt, string entryText)
-{
-    _date = date;
-    _prompt = prompt;
-    _entry = entryText;
-}
+    public Entry(string date, string prompt, string entryText)
+    {
+        _date = date;
+        _prompt = prompt;
+        _entry = entryText;
+    }
 
 
     public void Display()

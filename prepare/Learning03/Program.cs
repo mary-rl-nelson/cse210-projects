@@ -16,5 +16,10 @@ class Program
 
         Fraction fraction3 = new(1, 3);
         fraction3.Display();
+
+        Fraction fraction4 = new(1);
+        fraction4.Display();
+        fraction4.SetBottom(2);
+        fraction4.Display();
     }
 }

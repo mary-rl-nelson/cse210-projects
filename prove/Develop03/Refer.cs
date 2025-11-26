@@ -4,40 +4,46 @@ using System.Net.Mime;
 public class Refer
 {
     private string _book;
-    private string _chapter;
+    private int _chapter;
     private int _startVerse;
     private int? _endVerse;
 
 
-    Refer()
+    public Refer()
     {
-        //Generate scripture
+    GenerateScripture generator = new GenerateScripture();
+    Scripture s = generator.ScriptureGenerate();
+    _book = s._book;
+    _chapter = s._chapter;
+    _startVerse = s._verse;
+    _endVerse = s._verse2 == 0 ? (int?)null : s._verse2;
+
     }
 
-    public Refer(string book, string chapter, int verse, string content)
+    public Refer(string book, int chapter, int verse)
     {
         _book = book;
         _chapter = chapter;
-        _startVerse = Verse1;
+        _startVerse = verse;
         _endVerse = null;
     }
 
-    public Refer(string book, string chapter, int Verse1, int Verse2, string content)
+    public Refer(string book, int chapter, int verse, int verse2)
     {
         _book = book;
         _chapter = chapter;
-        _startVerse = Verse1;
-        _endVerse = Verse2;
+        _startVerse = verse;
+        _endVerse = verse2;
 
     }
 
     public string GetReference()
     {
-        return _book + " " +_chapter+":"+_startVerse;
-    }
-     public string GetReferenceMultVerse()
-    {
-        return _book + " " +_chapter+":"+_startVerse+"-"+_endVerse;
-    }
+        if (_endVerse.HasValue)
+        {
+            return $"{_book} {_chapter}:{_startVerse}-{_endVerse}";
+        }
 
+        return $"{_book} {_chapter}:{_startVerse}";
+    }
 }

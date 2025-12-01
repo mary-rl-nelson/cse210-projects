@@ -43,8 +43,6 @@ class Program
         Console.WriteLine("Press Enter to exit.");
         Console.ReadLine();
     }
-
-    // Helper: Build a Scripture from user input
     static Scripture CreateScriptureFromUserInput()
     {
         Console.Write("Enter the book (EX: Alma): ");

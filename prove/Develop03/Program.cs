@@ -4,19 +4,78 @@ class Program
 {
     static void Main(string[] args)
     {
-        bool running = true;
-        Console.WriteLine("1. Generate Scripture");
-        Console.WriteLine("2. Enter Your Own Scripture");
+        Console.WriteLine("Scripture Memorizer");
+        Console.WriteLine();
+        Console.WriteLine("Choose an option:");
+        Console.WriteLine("1: Generate a random scripture");
+        Console.WriteLine("2: Enter a scripture");
+        Console.Write("Your choice: ");
+        string choice = Console.ReadLine();
 
-        while (running)
+        Scripture scripture;
+
+        if (choice == "1")
         {
-            Console.WriteLine("\nOptions:");
-            Console.WriteLine("Push Enter to Hide Words");
-            Console.WriteLine("Type quit to exit program");
-            Console.WriteLine("");
-            Console.Write("Choose an option: ");
-            string choice = Console.ReadLine();
+            GenerateScripture generator = new GenerateScripture();
+            scripture = generator.ScriptureGenerate();
+        }
+
+        else if (choice == "2")
+        {
+            scripture = CreateScriptureFromUserInput();
+        }
+
+        else
+        {
+            Console.WriteLine("Invalid choice.");
+            return;
+        }
+
+        Refer refer = new Refer(scripture);
+        string referenceText = refer.GetReference();
+
+        Console.Clear();
+        Console.WriteLine("Here is your scripture:");
+        Console.WriteLine();
+        Console.WriteLine(referenceText);
+        Console.WriteLine(scripture._content);
+        Console.WriteLine();
+        Console.WriteLine("Press Enter to exit.");
+        Console.ReadLine();
     }
 
-    
+    // Helper: Build a Scripture from user input
+    static Scripture CreateScriptureFromUserInput()
+    {
+        Console.Write("Enter the book (EX: Alma): ");
+        string book = Console.ReadLine();
+
+        Console.Write("Enter the chapter (number): ");
+        int chapter = int.Parse(Console.ReadLine());
+
+        Console.Write("Enter the starting verse (number): ");
+        int startVerse = int.Parse(Console.ReadLine());
+
+        Console.Write("Is there an ending verse? (y/n): ");
+        string hasEndVerse = Console.ReadLine().ToLower();
+
+        int? endVerse = null;
+        if (hasEndVerse == "y")
+        {
+            Console.Write("Enter the ending verse (number): ");
+            endVerse = int.Parse(Console.ReadLine());
+        }
+
+        Console.WriteLine("Enter the scripture text:");
+        string content = Console.ReadLine();
+
+        return new Scripture
+        {
+            _book = book,
+            _chapter = chapter,
+            _verse = startVerse,
+            _verse2 = endVerse,
+            _content = content
+        };
+    }
 }

@@ -8,7 +8,6 @@ public class GenerateScripture
 {
    Dictionary<int, Scripture> _scriptDictionary;
 
-// Accessing individual properties by key:
     private Random _rand;
 
     public GenerateScripture()
@@ -30,18 +29,9 @@ public class GenerateScripture
 
     }
 
-    public (string Reference, string Content) ScriptureGenerate()
+    public Scripture ScriptureGenerate()
     {
         int keyIndex = _rand.Next(1, _scriptDictionary.Count + 1);
-        Scripture s = _scriptDictionary[keyIndex];
-        string reference;
-    
-        if (s._verse2 > 0)
-            reference = $"{s._book} {s._chapter}:{s._verse}-{s._verse2}";
-        else
-            reference = $"{s._book} {s._chapter}:{s._verse}";
-        
-        return (reference, s._content);
-        
+        return _scriptDictionary[keyIndex];
     }
 }

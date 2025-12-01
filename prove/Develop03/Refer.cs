@@ -11,31 +11,23 @@ public class Refer
 
     public Refer()
     {
-    GenerateScripture generator = new GenerateScripture();
-    Scripture s = generator.ScriptureGenerate();
-    _book = s._book;
-    _chapter = s._chapter;
-    _startVerse = s._verse;
-    _endVerse = s._verse2 == 0 ? (int?)null : s._verse2;
+        GenerateScripture generator = new GenerateScripture();
+        Scripture s = generator.ScriptureGenerate();
 
+        _book = s._book;
+        _chapter = s._chapter;
+        _startVerse = s._verse;
+        _endVerse = s._verse2;
     }
 
-    public Refer(string book, int chapter, int verse)
+    public Refer(Scripture s)
     {
-        _book = book;
-        _chapter = chapter;
-        _startVerse = verse;
-        _endVerse = null;
+        _book = s._book;
+        _chapter = s._chapter;
+        _startVerse = s._verse;
+        _endVerse = s._verse2;
     }
 
-    public Refer(string book, int chapter, int verse, int verse2)
-    {
-        _book = book;
-        _chapter = chapter;
-        _startVerse = verse;
-        _endVerse = verse2;
-
-    }
 
     public string GetReference()
     {

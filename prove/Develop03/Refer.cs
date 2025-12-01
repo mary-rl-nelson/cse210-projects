@@ -1,6 +1,3 @@
-using System.Dynamic;
-using System.Net.Mime;
-
 public class Refer
 {
     private string _book;
@@ -8,26 +5,6 @@ public class Refer
     private int _startVerse;
     private int? _endVerse;
 
-
-    public Refer()
-    {
-        GenerateScripture generator = new GenerateScripture();
-        Scripture s = generator.ScriptureGenerate();
-
-        _book = s._book;
-        _chapter = s._chapter;
-        _startVerse = s._verse;
-        _endVerse = s._verse2;
-    }
-
-    public Refer(Scripture s)
-    {
-        _book = s._book;
-        _chapter = s._chapter;
-        _startVerse = s._verse;
-        _endVerse = s._verse2;
-    }
-    
     public Refer(string book, int chapter, int verse)
     {
         _book = book;
@@ -42,7 +19,6 @@ public class Refer
         _chapter = chapter;
         _startVerse = verse;
         _endVerse = verse2;
-
     }
 
     public string GetReference()

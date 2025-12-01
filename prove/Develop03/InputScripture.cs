@@ -4,7 +4,7 @@ public class InputScripture
 {
     public static Scripture GetScriptureFromUser()
     {
-        Console.Write("Enter the book (e.g., 'Alma'): ");
+        Console.Write("Enter the book (EX: Alma): ");
         string book = Console.ReadLine();
 
         Console.Write("Enter the chapter (number): ");

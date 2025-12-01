@@ -31,7 +31,7 @@ class Program
         while (true)
         {
             Console.Clear();
-            Console.WriteLine(scripture.GetDisplayText());
+            Console.WriteLine(scripture.GetDisplay());
             Console.WriteLine();
             Console.Write("Press Enter to hide words or type 'quit' to exit: ");
 
@@ -41,12 +41,12 @@ class Program
                 break;
             }
 
-            scripture.HideRandomWords(3);
+            scripture.HideWords(3);
 
-            if (scripture.IsCompletelyHidden())
+            if (scripture.IsHidden())
             {
                 Console.Clear();
-                Console.WriteLine(scripture.GetDisplayText());
+                Console.WriteLine(scripture.GetDisplay());
                 Console.WriteLine("\nAll words are hidden. Great job!");
                 break;
             }

@@ -1,4 +1,5 @@
 using System;
+
 public class Word
 {
     private string _text;
@@ -15,20 +16,18 @@ public class Word
         _hidden = true;
     }
 
-    
-    
+    public bool Hidden()
+    {
+        return _hidden;
+    }
 
+    public string GetDisplay()
+    {
+        if (_hidden)
+        {
+            return new string('_', _text.Length);
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
+        return _text;
+    }
 }

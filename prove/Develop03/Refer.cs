@@ -27,7 +27,23 @@ public class Refer
         _startVerse = s._verse;
         _endVerse = s._verse2;
     }
+    
+    public Refer(string book, int chapter, int verse)
+    {
+        _book = book;
+        _chapter = chapter;
+        _startVerse = verse;
+        _endVerse = null;
+    }
 
+    public Refer(string book, int chapter, int verse, int verse2)
+    {
+        _book = book;
+        _chapter = chapter;
+        _startVerse = verse;
+        _endVerse = verse2;
+
+    }
 
     public string GetReference()
     {

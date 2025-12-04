@@ -2,6 +2,8 @@ using System;
 
 class Program
 {
+    //Exceeding Requirements: Had a list of scriptures that could be chosen at random
+    //had an option for the user to enter in their own scripture
     static void Main(string[] args)
     {
         Console.WriteLine("Scripture Memorizer");

@@ -44,5 +44,6 @@ public class Assignment
     {
         return $"Name: {_name}, Topic: {_topic}";
     }
+
 }
 

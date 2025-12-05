@@ -16,19 +16,20 @@ public class WritingAssignment : Assignment
     }
 
     public string GetTitle()
-    {
-        return _title;
-    }
+   {
+       return _title;
+   }
 
-    public void SetTitle(string title)
-    {
-        _title = title;
-    }
+//set section not needed because it is set in the contructor
+    //public void SetTitle(string title)
+   // {
+  //      _title = title;
+   // }
 
-    public string GetWritingInformation()
-    {
-        return $"Name: {_name}, Topic: {_topic}, Title: {_title}";
-    }
+   // public string GetWritingInformation()
+  //  {
+   //     return $"Name: {_name}, Topic: {_topic}, Title: {_title}";
+  //  }
     
     public string GetAssignment()
     {

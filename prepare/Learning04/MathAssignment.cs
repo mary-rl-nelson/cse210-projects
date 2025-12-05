@@ -19,23 +19,25 @@ public class MathAssignment : Assignment
 
     public string GetSection()
     {
-        return _textbookSection;
+         return _textbookSection;
     }
 
-    public void SetSection(string textbookSection)
-    {
-        _textbookSection = textbookSection;
-    }
+    //set section not needed because it is set in the contructor
+    // public void SetSection(string textbookSection)
+    // {
+    //     _textbookSection = textbookSection;
+    // }
 
     public string GetProblems()
     {
         return _problems;
     }
 
-    public void SetProblems(string problems)
-    {
-        _problems = problems;
-    }
+    //set section not needed because it is set in the contructor
+    // public void SetProblems(string problems)
+    // {
+    //     _problems = problems;
+    // }
 
     public string GetHomeworkList()
     {

@@ -50,8 +50,10 @@ public class Activity
         Console.WriteLine("Take a few seconds to prepare to begin.");
         for (int i = 3; i>0; i--)
         {
-            Console.Write(".");
+            Console.Write(i);
             Thread.Sleep(1000);
+            Console.Write("\b \b");
+
         }
         Console.WriteLine();
     }
@@ -67,8 +69,10 @@ public class Activity
         Console.WriteLine($"Good Job! ");
         for (int i = 3; i>0; i--)
         {
-            Console.Write(".");
+            Console.Write(i);
             Thread.Sleep(1000);
+            Console.Write("\b \b");
+
         }
         Console.WriteLine();
         Console.WriteLine($"You completed the {_name} for {_duration} seconds.");

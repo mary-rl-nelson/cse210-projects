@@ -4,18 +4,28 @@ using System.IO;
 public abstract class Goal
 {
     protected string _name;
+    protected DateTime _dateTime;
     protected string _description;
     protected int _points;
 
+    protected DateTime? _dateCompleted = null;
+
+    public Goal(string name, DateTime dateTime, string description, int points)
+    {
+        _name = name;
+        _dateTime = dateTime;
+        _description = description;
+        _points = points;
+    }
 
     public string GetName()
     {
-        return _name;    
+        return _name;
     }
 
-    public void SetName(string name)
+    public DateTime GetDateTime()
     {
-        _name = name;
+        return _dateTime;
     }
 
     public string GetDescription()
@@ -23,26 +33,40 @@ public abstract class Goal
         return _description;
     }
 
-    public void SetDescription(string description)
+    public int GetPoints()
     {
-        _description = description;
+        return _points;
+    }
+
+    public DateTime? GetDateCompleted()
+    {
+        return _dateCompleted;
     }
 
     public abstract int RecordEvent();
-
     public abstract bool IsComplete();
+    public abstract string GetStringRepresentation();
 
-    public string GetStatus()
+    public virtual string GetStatus()
     {
-            
+        string box;
+        string completedText = "";
+
+        if (IsComplete())
+        {
+            box = "X";
+        }
+        else
+        {
+            box = " ";
+        }
+
+        if (IsComplete() && _dateCompleted != null)
+        {
+            completedText = $" | Completed On: {_dateCompleted:MM/dd/yyyy}";
+        }
+
+        return $"[{box}] {_name}: {_description} | Date Created: {_dateTime:MM/dd/yyyy} | Worth: {_points}{completedText}";
     }
-
-    public string GetStringRepresentation()
-    {
-        
-    }
-
-
-
-
 }
+

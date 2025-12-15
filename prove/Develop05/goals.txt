@@ -1,0 +1,5 @@
+2200
+SimpleGoal|Marathon|12/13/2025 12:50:53 AM|Run a Marathon|1000|True
+ForeverGoal|Scriptures|12/13/2025 12:52:01 AM|Read Scriptures Daily|50
+CheckListGoal|Temple|12/13/2025 12:52:47 AM|Attend the temple ten times in january.|100|500|10|2
+SimpleGoal|Read|12/13/2025 1:41:38 AM|Read one book in a week|1000|True

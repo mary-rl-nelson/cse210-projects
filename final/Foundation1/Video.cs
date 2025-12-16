@@ -1,18 +1,18 @@
 using System;
 
-public class Videos
+public class Video
 {
     private string _title;
     private string _author;
     private int _length;
-    private List<Comments> _comments;
+    private List<Comment> _comment;
 
-    public Videos(string title, string author, int length)
+    public Video(string title, string author, int length)
     {
         _title = title;
         _author = author;
         _length = length;
-        _comments = new List<Comments>();
+        _comment = new List<Comment>();
     }
 
     public string GetTitle()
@@ -32,13 +32,17 @@ public class Videos
 
     public int GetCount()
     {
-        return _comments.Count(); 
+        return _comment.Count; 
     }
 
-    public List<Comments> GetComments()
+    public List<Comment> GetComment()
     {
-        return _comments;
+        return _comment;
     }
 
+    public void AddComment(Comment comment)
+    {
+        _comment.Add(comment);
+    }
 
 }

@@ -1,13 +1,14 @@
 using System;
+using System.Collections.Generic;
 
 class Program
 {
     static void Main(string[] args)
     {
-        List<Videos> _videoList = new List<Videos>();
+        List<Video> _videoList = new List<Video>();
 
-        Videos firstVideo = new Videos("Stake Conference", "Klein Stake", 7200);
-        firstVideo.Add
+        Video firstVideo = new Video("Stake Conference", "Klein Stake", 7200);
+        firstVideo.AddComment(new Comment("Mary", "Best Conference Ever!!"));
         
     }
 }

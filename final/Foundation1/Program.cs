@@ -4,6 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Foundation1 World!");
+        List<Videos> _videoList = new List<Videos>();
+
+        Videos firstVideo = new Videos("Stake Conference", "Klein Stake", 7200);
+        firstVideo.Add
+        
     }
 }

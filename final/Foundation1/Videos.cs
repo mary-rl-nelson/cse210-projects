@@ -1,13 +1,13 @@
 using System;
 
-public class Video
+public class Videos
 {
     private string _title;
     private string _author;
     private int _length;
     private List<Comments> _comments;
 
-    public Video(string title, string author, int length, List<Comments>)
+    public Videos(string title, string author, int length)
     {
         _title = title;
         _author = author;
@@ -39,10 +39,6 @@ public class Video
     {
         return _comments;
     }
-
-
-
-
 
 
 }

@@ -5,13 +5,12 @@ public class Address
     private string _streetName;
     private string _city;
     private string _state;
-
-    private string _zipCode;
+    private int _zipCode;
     private string _country;
 
-    public Address(string streetAddress, string city, string state, string zipCode, string country)
+    public Address(string streetName, string city, string state, int zipCode, string country)
     {
-        _streetAddress = streetAddress;
+        _streetName = streetName;
         _city = city;
         _state = state;
         _zipCode = zipCode;

@@ -18,21 +18,37 @@ public class Order
 
     public decimal GetPriceTotal()
     {
-        decimal total = 0;
+        decimal priceTotal = 0;
         foreach (Product p in _productList)
         {
-            total = total + p.GetCostTotal();
+            priceTotal = priceTotal + p.GetCostTotal();
         }
         if (_customer.InUSA())
         {
-            total = total + 5;
+            priceTotal = priceTotal + 5;
         }
         else
         {
-            total = total + 35;
+            priceTotal = priceTotal + 35;
         }
 
-        return total;
+        return priceTotal;
+    }
 
+    public string GetPackingLabel()
+    {
+        string packingLabel = "Packing Label:\n";
+
+        foreach (Product p in _productList)
+        {
+            packingLabel += $"{p.GetProdName()} | ID: {p.GetProdId()}\n";
+        }
+
+        return packingLabel;
+    }
+
+    public string GetShippingLabel()
+    {
+        return $"SHIPPING LABEL:\n{_customer.GetShippingLabel()}";
     }
 }

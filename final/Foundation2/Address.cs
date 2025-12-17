@@ -58,6 +58,6 @@ public class Address
 
     public string GetFullAddress()
     {
-        return $"{_streetName}\n {_city}, {_state} {_zipCode}\n {_country}";
+        return $"{_streetName}\n{_city}, {_state} {_zipCode}\n{_country}";
     }
 }

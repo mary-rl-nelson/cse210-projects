@@ -31,5 +31,4 @@ public class Product
         return _unitPrice * _quantity;
     }
 
-
 }

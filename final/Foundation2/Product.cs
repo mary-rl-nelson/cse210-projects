@@ -4,11 +4,11 @@ public class Product
 {
     private string _prodName;
     private string _prodId;
-    private double _unitPrice;
+    private decimal _unitPrice;
     private int _quantity;
 
 
-    public Product(string prodName, string prodId, double unitPrice, int quantity)
+    public Product(string prodName, string prodId, decimal unitPrice, int quantity)
     {
         _prodName = prodName;
         _prodId = prodId;
@@ -26,7 +26,7 @@ public class Product
         return _prodId;
     }
 
-    public double GetCostTotal()
+    public decimal GetCostTotal()
     {
         return _unitPrice * _quantity;
     }

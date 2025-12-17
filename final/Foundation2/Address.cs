@@ -1,4 +1,5 @@
 using System;
+using System.Security.Cryptography;
 
 public class Address
 {
@@ -14,7 +15,44 @@ public class Address
         _city = city;
         _state = state;
         _zipCode = zipCode;
-        _country = country;
+        _country = country.ToLower();
     }
 
+    public string GetStreetName()
+    {
+        return _streetName;
+    }
+
+    public string GetCity()
+    {
+        return _city;
+    }
+
+    public string GetState()
+    {
+        return _state;
+    }
+
+    public int GetZipCode()
+    {
+        return _zipCode;
+    }
+
+    public string GetCountry()
+    {
+        return _country;
+    }
+
+    public bool USACheck()
+    {
+        if (_country == "us" || _country == "usa" || _country == "united states" || _country == "united states of america")
+        {
+            return true;
+        }
+
+        else
+        {
+            return false;
+        }
+    }
 }
